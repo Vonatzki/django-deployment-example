@@ -1,0 +1,16 @@
+<!doctype html>
+{% extends "basic_app/base.html" %}
+{% block title_block %}Home{% endblock title_block %}
+{% block body_block %}
+<div class="jumbotron jumbotron-fluid">
+	<div class="container">
+		<h1 class='display-3'>Welcome to Django Site!</h1>
+		<p class="lead">Explore the this awesome world of web development!</p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		{% lorem 20 p %}
+	</div>
+</div>
+{% endblock body_block %}

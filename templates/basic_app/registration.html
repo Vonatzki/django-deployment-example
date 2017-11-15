@@ -1,0 +1,26 @@
+<!doctype html>
+{% extends 'basic_app/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}Registration{% endblock title_block %}
+
+{% block body_block %}
+<div class="jumbotron">
+	<h1 class="display-3">Register User</h1>
+</div>
+<div class="container">
+	{% if registered %}
+	<h1>Thank you for registering!</h1>
+	<p><a href="{% url 'basic_app:index' %}">Go back to Home</a></p>
+	
+	{% else %}
+	<form method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ user_form.as_p }}
+		{{ userprofile_form.as_p}}
+		<input type="submit" name="" value="Register" class="btn btn-primary">
+	</form>
+	{% endif %}
+		
+</div>
+{% endblock body_block %}
